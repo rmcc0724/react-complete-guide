@@ -9,8 +9,10 @@ function Expenses(props) {
       title={i.title}
       amount={i.amount}
       date={i.date}
-    ></ExpenseItem>
+    />
   ))
-  return <div className="expenses">{allExpenses}</div>
+  return (
+  <div className="expenses">{allExpenses}</div>
+  )
 }
 export default Expenses

@@ -1,6 +1,6 @@
 import ExpenseItem from './ExpenseItem'
 import './Expenses.css'
-
+import Card from './Card'
 
 function Expenses(props) {
   const allExpenses = props.expenses.map((i) => (
@@ -12,7 +12,7 @@ function Expenses(props) {
     />
   ))
   return (
-  <div className="expenses">{allExpenses}</div>
+  <Card className="expenses">{allExpenses}</Card>
   )
 }
 export default Expenses

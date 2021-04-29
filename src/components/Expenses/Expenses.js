@@ -13,7 +13,7 @@ const Expenses = (props) => {
     />
   ))
   return (
-  <Card className="expenses">{allExpenses}</Card>
+  <Card className='expenses'>{allExpenses}</Card>
   )
 }
 export default Expenses

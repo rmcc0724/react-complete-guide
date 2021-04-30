@@ -5,12 +5,12 @@ import Card from '../UI/Card'
 
 const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title);
-  console.log(props);
+  // console.log(props);
 
-  const changeTitleHandler = () => {
-    setTitle('Updated');
-    console.log(title);
-  }
+  // const changeTitleHandler = () => {
+  //   setTitle('Updated');
+  //   console.log(title);
+  // }
 
 // class ExpenseItem extends React.Component {
 //   constructor(props) {
@@ -36,7 +36,7 @@ const ExpenseItem = (props) => {
           <h2>{title}</h2>
           <div className='expense-item__price'>{props.amount}</div>
         </div>
-        <button onClick={changeTitleHandler}>Change Title</button>
+        {/* <button onClick={changeTitleHandler}>Change Title</button> */}
       </Card>
     )
     // }

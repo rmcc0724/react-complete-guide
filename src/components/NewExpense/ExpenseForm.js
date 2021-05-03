@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import './ExpenseForm.css'
 
 const ExpenseForm = (props) => {
+
+  ////These are the state functions
   const [enteredTitle, setEnteredTitle] = useState('')
   const [enteredAmount, setEnteredAmount] = useState('')
   const [enteredDate, setEnteredDate] = useState('')
 
+  ////These are the functions for the event handlers
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value)
   }
@@ -19,17 +22,20 @@ const ExpenseForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault()
 
+    ////This object sets the values of the state props
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate),
     }
 
+    ////This function is passed up to the NewExpense component
+    props.onSaveExpenseData(expenseData);
+
+    ////After the form is submitted, clear the fields
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');
-
-    console.log(expenseData)
   }
 
   return (

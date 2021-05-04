@@ -13,21 +13,19 @@ const Expenses = (props) => {
 
 
 console.log(setYear);
-
-  const allExpenses = props.expenses.map((i) => (
+  return (
+  <div>
+  <Card className='expenses'>
+  <ExpensesFilter selected={setYear} className='expense-filter' onYearChange={selectedYearListener}/>
+{props.expenses.map((i) => (
     <ExpenseItem
       key={i.id}
       title={i.title}
       amount={i.amount}
       date={i.date}
-    />
-  ))
+    />))}
 
-  return (
-  <div>
-  <Card className='expenses'>
-  <ExpensesFilter selected={setYear} className='expense-filter' onYearChange={selectedYearListener}/>
-{allExpenses}</Card>
+</Card>
   </div>
   )
 }

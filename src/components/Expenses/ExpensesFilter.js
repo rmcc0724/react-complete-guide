@@ -6,16 +6,8 @@ import './ExpensesFilter.css';
 ///Store it in a state
 
   const ExpensesFilter = (props) => {
-
-      // const [selectedYear, setYear] = useState('');
-
+    
       const yearChangeHandler = (event) => {
-
-      //   setYear(event.target.value);
-        
-      // const yearData = {
-      //   year: selectedYear
-      // }
       props.onYearChange(event.target.value);
     }
 

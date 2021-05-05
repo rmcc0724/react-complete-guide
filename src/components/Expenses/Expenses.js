@@ -6,23 +6,14 @@ import ExpensesFilter from './ExpensesFilter'
 
 const Expenses = (props) => {
   const [setYear, selectedYear] = useState('2020')
-  const [setExpenses, selectedExpenses] = useState(props.expenses)
 
   const selectedYearListener = (year) => {
-    const yearExpenses = props.expenses.filter((i) =>
-      i.date.getFullYear().toString() === year.toString() ? i : null,
-    )
-    const setNewYear = async () =>
-      selectedYear(() => {
-        return year
-      });
-      
-      setNewYear().then(() => {
-      selectedExpenses(()=>{
-        return yearExpenses;
-      })
-    })
+    selectedYear(year)
   }
+
+  const filteredExpenses = props.expenses.filter((i) => {
+    return i.date.getFullYear().toString() === setYear
+  })
 
   return (
     <div>
@@ -32,7 +23,7 @@ const Expenses = (props) => {
           className="expense-filter"
           onYearChange={selectedYearListener}
         />
-        {setExpenses.map((i) => (
+        {filteredExpenses.map((i) => (
           <ExpenseItem
             key={i.id}
             title={i.title}

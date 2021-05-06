@@ -6,11 +6,10 @@ import './ExpensesFilter.css';
 ///Store it in a state
 
   const ExpensesFilter = (props) => {
-    
+
       const yearChangeHandler = (event) => {
       props.onYearChange(event.target.value);
     }
-
   return (
     <div className='expenses-filter'>
       <div className='expenses-filter__control'>
@@ -25,5 +24,4 @@ import './ExpensesFilter.css';
     </div>
   );
 };
-
 export default ExpensesFilter;

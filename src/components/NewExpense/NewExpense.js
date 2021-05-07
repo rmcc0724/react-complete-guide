@@ -11,6 +11,9 @@ const NewExpense = (props) => {
       ...enteredExpenseData,
     }
     props.onAddExpense(expenseData)
+    setFormState(() => {
+      return false;
+    })
   }
 
   const openFormHandler = () => {

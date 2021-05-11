@@ -24,9 +24,9 @@ const ExpenseForm = (props) => {
     ////This object sets the values of the state props
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
-    }
+    };
     ////This function is passed up to the NewExpense component
     props.onSaveExpenseData(expenseData)
 
